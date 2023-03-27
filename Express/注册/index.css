@@ -1,0 +1,48 @@
+#one{
+    width: 1000px;
+    height: 300px;
+    border: 1px solid black;
+    margin: 0 auto;
+    position: relative;
+}
+body{
+    color: white;
+}
+.beijing{
+    width: auto;
+    height: 700px;
+    background:url("./images/beijing.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+#one table input{
+    border-radius: 20px;
+
+
+    width: 200px;
+    height: 20px;
+}
+#one .a2{
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    padding: 0 20px 0 20px;
+    font-size: 20px;
+    background: #0CD0E0;
+    color: white;
+    bottom: 20px;
+    left: 400px;
+    border-radius: 30px;
+}
+#one h3{
+    color: white;
+    text-align: center;
+}
+#one table{
+    margin: 0 auto;
+}
+#one .a1{
+    text-align: right;
+}
+#one table span{
+    color:red;
+}

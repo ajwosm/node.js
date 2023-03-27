@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加记录</title>
+    <style>
+
+        div{
+            width: 800px;
+            height: 500px;
+            margin: 0 auto;
+        }
+        input,button,textarea,select{
+            width: 800px;
+            height: 30px;
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+        button{
+            color: white;
+            background: #00B7FF;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h2>添加记录</h2>
+    <hr>
+    <form method="post" action="/account">
+        <h5>事项</h5>
+        <input type="text" name="title">
+        <h5>发生事件</h5>
+        <input type="text" name="time">
+        <h5>类型</h5>
+        <select name="type" >
+            <option value="-1">支出</option>
+            <option value="1">收入</option>
+        </select>
+        <h5>金额</h5>
+        <input type="text" name="account">
+        <h5>备注</h5>
+        <textarea name="remarks"></textarea>
+        <button type="submit">添加</button>
+    </form>
+
+</div>
+</body>
+</html>

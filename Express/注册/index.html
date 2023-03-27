@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="beijing">
+    <div id="one">
+        <h3>请设置你的账号和密码</h3>
+        <form action="http://127.0.0.1:3000/login" method="post">
+            <table>
+                <tr>
+                    <td class="a1">用户名：</td>
+                    <td><input type="text" placeholder="请设置你的用户名" name="username"></td>
+                    <td><span>*不超过6个字</span></td>
+                </tr>
+                <tr>
+                    <td class="a1">密码：</td>
+                    <td><input type="password" placeholder="请设置你的密码" name="password"></td>
+                    <td><span>*8~16位，必须包含大小写字母</span></td>
+                </tr>
+            </table>
+            <input class="a2" type="submit" value="提交">
+        </form>
+    </div>
+</div>
+</body>
+</html>

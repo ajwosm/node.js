@@ -1,0 +1,14 @@
+// 1.引入fs模块
+
+const fs = require('fs')
+
+// 2.异步读取
+// fs.readFile('./观书有感.txt',(err, data) =>{
+//     if (err){
+//         console.log('读取失败');
+//         return;
+//     }
+//     console.log(data.toString())
+// });
+const data = fs.readFileSync('./观书有感.txt')
+console.log(data.toString())

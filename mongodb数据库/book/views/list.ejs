@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>记账本</title>
+    <style>
+        .connt{
+            width: 800px;
+            height: 500px;
+            margin: 0 auto;
+        }
+        .f{
+            display: flex;
+            justify-content: left;
+
+        }
+        .f div{
+            margin-left: 100px;
+            padding: 10px;
+
+        }
+        .a{
+            border: 1px solid black;
+
+        }
+        .b{
+
+            padding: 10px;
+        }
+        .c{
+            padding: 20px;
+        }
+        .d{
+            background: #00B7FF;
+        }
+        .e{
+            background: pink;
+        }
+        a{
+         color: black;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+
+
+<div class="connt">
+    <h2>记账本</h2>
+    <hr>
+
+    <div class="a">
+        <% accounts.forEach(item =>{ %>
+        <div class="c">
+            <div class="b">
+                <%= item.time%>
+            </div>
+            <div class="f <%= item.type ==='-1'? 'e':'d' %>">
+                <div><%= item.title%></div>
+                <div class="<%= item.type ==='-1'? 'e':'d' %>"><%= item.type ==='-1'? '支出':'收入' %></div>
+                <div><%= item.account%></div>
+                <a href="/account/<%= item.id%>"><div>x</div></a>
+            </div>
+        </div>
+
+            <%})%>
+    </div>
+
+</div>
+
+
+</body>
+</html>
