@@ -40,6 +40,12 @@
          color: black;
             text-decoration: none;
         }
+        .div{
+            display: flex;
+        }
+        .div h2{
+            margin-left: 20px;
+        }
     </style>
 </head>
 <body>
@@ -47,7 +53,10 @@
 
 
 <div class="connt">
-    <h2>记账本</h2>
+    <div class="div">
+        <h2>记账本</h2>
+        <h2><a href="account/create">添加账单</a></h2>
+    </div>
     <hr>
 
     <div class="a">
@@ -56,19 +65,29 @@
             <div class="b">
                 <%= item.time%>
             </div>
-            <div class="f <%= item.type ==='-1'? 'e':'d' %>">
+            <div class="f <%= item.type === -1? 'e':'d' %>">
                 <div><%= item.title%></div>
-                <div class="<%= item.type ==='-1'? 'e':'d' %>"><%= item.type ==='-1'? '支出':'收入' %></div>
+                <div class="<%= item.type === -1? 'e':'d' %>"><%= item.type === -1? '支出':'收入' %></div>
                 <div><%= item.account%></div>
-                <a href="/account/<%= item.id%>"><div>x</div></a>
+                <a class = 'delBtn' href="/account/<%= item._id%>"><div>x</div></a>
             </div>
         </div>
-
             <%})%>
     </div>
-
 </div>
-
-
 </body>
+<script>
+    let btn = document.querySelectorAll('.delBtn');
+    //帮定事件
+    btn.forEach(item=>{
+        item.addEventListener('click',function (e){
+            if (confirm('您确定要删除吗？')){
+                return true;
+            }else{
+                e.preventDefault();
+            }
+        })
+    })
+
+</script>
 </html>
