@@ -1,20 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-const low = require('lowdb')
-const FileSync = require('lowdb/adapters/FileSync')
-
-const adapter = new FileSync(__dirname + '/../data/db.json')
-const db = low(adapter)
-
 //导入shortid
 const shortid = require('shortid');
 
-//导入moment
-const moment = require('moment');
-
 //导入AccountModel
-const AccountModel = require('../models/AccountModel');
+const AccountModel = require('../../models/AccountModel');
 // console.log(moment('2003-10-04').toDate())
 
 /* 记账本列表 */
@@ -48,7 +39,7 @@ router.post('/account', (req, res) => {
         //成功提醒
         let id =shortid.generate();
 // //写入文件
-        db.get('accounts').unshift({id:id,...req.body}).write();
+//         db.get('accounts').unshift({id:id,...req.body}).write();
         res.render('tixing', {mgs: '添加成功··', url: '/account'});
     })
 
@@ -69,5 +60,5 @@ router.get('/account/:id', function (req, res, next) {
    })
 
 });
-console.log('http://127.0.0.1:3000/account/create')
+console.log('http://127.0.0.1:3000/account')
 module.exports = router;
